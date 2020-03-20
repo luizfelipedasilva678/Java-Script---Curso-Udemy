@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Problema com string</title>
+</head>
+<body>
+
+	Digite seu nome<input type="text" name="nome" id="nome">
+	<br>
+	Formatar nome<input type="submit" name="enviar" id="enviar">
+	
+	<p id="nomeFormatado"></p>
+
+	<script type="text/javascript">
+		(function(){
+
+			var  enviar = document.querySelector('#enviar');
+
+			enviar.addEventListener("click", function(e){
+				var nome = document.querySelector('#nome').value;
+				var arr = nome.split(' ');
+				var ultimoNome = arr.pop();
+				var nomeFormatado = ultimoNome+','+arr
+				console.log(nomeFormatado);
+				document.querySelector('#nomeFormatado').textContent = nomeFormatado.replace(',',' '); 
+			})
+
+		})();
+	</script>
+</body>
+</html>

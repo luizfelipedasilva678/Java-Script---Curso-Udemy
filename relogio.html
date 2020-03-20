@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Relógio </title>
+</head>
+
+<body>
+    <div class="relogio">
+
+    </div>
+
+    <script>
+        (function() {
+
+            setInterval(function() {
+                
+                var horaAtual = new Date();
+                document.querySelector('.relogio').textContent = horaAtual.getHours() + ':' + horaAtual.getMinutes() + ':' + horaAtual.getSeconds();
+                
+            }, 1000);
+            
+        })();
+    </script>
+</body>
+
+</html>

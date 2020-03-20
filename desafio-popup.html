@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio</title>
+    <style>
+        .banner{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+            display: none;
+        }
+        .fechaBanner{
+            position: absolute;
+            top: 5px;
+            right: 5px; 
+        }
+        
+    </style>
+</head>
+    
+<body>
+    <div class="banner">
+        <h1>Banner seu LIXO</h1> <button class="fechaBanner">x</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nobis. Provident animi vel soluta perferendis tenetur voluptatem minima numquam molestias eos sunt temporibus laborum, ipsa mollitia officiis omnis aperiam quisquam. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos est modi quaerat voluptate quae officiis earum quisquam itaque iusto veniam beatae impedit aspernatur praesentium adipisci excepturi, nobis porro? Consequatur, error.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nisi assumenda modi, asperiores, animi voluptatum similique deleniti, sit nesciunt illo ut qui beatae. Eveniet commodi, magnam. Nulla asperiores perferendis ipsam.</p>
+    </div>
+    <script>
+        (function(){
+            var btn = document.querySelector('.fechaBanner');
+            var banner = document.querySelector('.banner');
+            btn.addEventListener('click',function(){
+                banner.style.display = 'none';
+            })
+            setTimeout(function(){
+                banner.style.display = 'block';    
+            }, 5000)
+        })();
+    </script>
+</body>
+
+</html>

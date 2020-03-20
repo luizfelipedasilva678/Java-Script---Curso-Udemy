@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício Objeto</title>
+</head>
+<body>
+	<h1>Exercício Objeto</h1>
+	<script type="text/javascript">
+			var Nome = (function(window){
+				'use strict';
+				function _nome(primeiroNome, segundoNome){
+					var firstName = primeiroNome || '';
+					var secondName = segundoNome || '';
+					this.setNome = function(nome){
+						firstName = nome;
+					}
+					this.setSobrenome = function(sobreNome){
+						secondName = sobreNome;
+					}
+					this.getNome = function(){
+						return firstName;
+					}
+					this.getSobreNome = function(){
+						return secondName;
+					}
+					this.nomeCompleto = function(){
+						return firstName + "  " +secondName;
+					}
+				}
+				return _nome;
+			})(window);	
+
+			var n1 = new Nome();
+			var n2 = new Nome('Pedro', 'da Silva');
+			var n3 = new Nome('Maria', 'da Silva');
+			
+			var nomes = [];
+			nomes.push(n1,n2,n3);
+			for (var i = 0;i<nomes.length;i++) {
+				console.log(nomes[i].nomeCompleto());
+			}
+
+	</script>
+</body>
+</html>

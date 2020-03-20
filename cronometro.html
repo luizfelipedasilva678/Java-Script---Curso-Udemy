@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Cronômetro </title>
+</head>
+
+<body>
+    <p id="cronometro"></p><button id="iniciar">Iniciar</button>
+    <script>
+        var n = 0;
+        var j = 0;
+        setInterval(function(){
+            if(n==60){
+                ++n;
+            }else{
+                ++j;
+            }
+            console.log(j,":",n);
+        },1000)
+        
+    </script>
+</body>
+</html>

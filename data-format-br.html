@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">   
+    <title> Data no Formato Brasileiro </title>
+</head>
+<body>
+    <script>
+        (function(){
+            var  dataAtual = new Date(2020,11,25);
+            var  formatarBr = dataBr(dataAtual);
+            function dataBr(data){
+                var dia = data.getDate();
+                var mes = data.getMonth()+1;
+                var ano = data.getFullYear();
+                return dia+'/'+mes+'/'+ano;
+            }
+            console.log(formatarBr);
+
+        })();
+    </script>
+</body>
+</html>

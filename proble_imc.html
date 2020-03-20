@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Problema com IMC</title>
+</head>
+<body>
+	<h1>Problema com IMC</h1>
+
+	<script>
+		(function init(){
+			
+			function calculaImc(){
+				var peso = prompt('Digite seu peso');
+				peso = parseInt(peso);
+				console.log("Peso: ", peso);
+
+				var altura = prompt('Digite sua altura');
+				altura = parseFloat(altura);
+				console.log("Altura: ", altura);
+
+				var imc = peso/(altura*altura);
+				console.log("Imc: ", imc);
+
+				return imc;
+			}
+
+			function status(imc){
+				console.log("Imc da função status: ", imc);
+				if (imc <= 16.9){
+					console.log("Muito abaixo do Peso");
+				}else if (imc <= 18.4){
+					console.log("Abaixo do Peso");
+				}else if(imc <= 24.9){
+					console.log("Peso normal");
+				}else if(imc <= 29.9){
+					console.log("Acima do Peso");
+				}else if(imc <= 34.9){
+					console.log("Obsedidade Grau I");
+				}else if(imc <= 40){
+					console.log("Obsedidade Grau II");
+				}else if(imc > 40){
+					console.log("Obsidade Grau III");
+				}
+			}
+			
+			var imc = calculaImc();	
+			var situacao = status(imc);
+		})();
+	</script>
+</body>
+</html>

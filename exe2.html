@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		(function(){
+			function Nome(nome, sobreNome){
+				this.nome = nome || "Luiz";
+				this.sobreNome = sobreNome || "da Silva";
+				this.mudaNome = function(nome){
+					this.nome = nome;
+				}
+			}
+
+			var  n1 = new Nome("Pero", "Silva");
+			console.log(n1);
+		})();
+	</script>
+</body>
+</html>

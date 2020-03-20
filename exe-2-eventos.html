@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Problema Mais DOM</title>
+	<style type="text/css">
+		textarea{
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<textarea>
+	</textarea>
+	
+	<p>Restam <span id="restam">100</span> caracteres.</p>
+	
+	<script type="text/javascript">
+		(function(){
+			
+			var $textArea = document.querySelector('textarea');
+			var nMax = 100;
+
+			$textArea.addEventListener('input', function(e){
+				var caracteres =  nMax - $textArea.value.length;
+				document.getElementById('restam').innerHTML = caracteres;
+				if (caracteres === 0){
+					$textArea.disabled = true;
+				}	
+			})
+		})();
+	</script>
+</body>
+</html>

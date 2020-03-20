@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regex</title>
+</head>
+<body>
+	<p>20/10/2009</p>
+
+	<script type="text/javascript">
+		var paragrafo = document.querySelector('p').textContent;
+		var regex = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/g;
+		
+		String.prototype.replaceAll = function(busca,troca){
+			return this.split(busca).join(troca);
+		}
+
+		if (regex.test(paragrafo)){
+			console.log(paragrafo.replaceAll('/',' de '));
+		}
+
+		
+	
+	</script>
+</body>
+</html>

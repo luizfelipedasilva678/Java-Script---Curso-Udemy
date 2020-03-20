@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de Tarefas</title>
+	<style type="text/css">
+		.excluido{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<ul id='tarefas'>
+		<li>Limpar Casa</li>
+	</ul>
+
+	<br>
+	Digite sua Tarefa:<input type="text" name="tarefa" id="tarefa">
+	<br>
+	<button id='adicionar'>Adicionar</button>
+
+	<script type="text/javascript">
+		(function(){
+			var btn = document.getElementById('adicionar');
+			var lista = document.getElementById('tarefas');
+			var tarefa = document.getElementById('tarefa');
+
+			btn.addEventListener('click', adicionarTarefa)
+			
+			tarefa.addEventListener('keyup', function(e){
+				if (e.keyCode === 13){
+					adicionarTarefa();
+				}
+			})
+			
+			lista.addEventListener('click', function(e){
+				element = e.target;
+				if (element.nodeName ==='LI'){
+					console.log(e.target);
+					element.parentNode.removeChild(element);
+				}
+			})
+			
+			function adicionarTarefa(){
+				var li = document.createElement("li");
+				var novaTarefa = document.getElementById('tarefa').value;
+				li.innerHTML = novaTarefa;
+				lista.appendChild(li);
+				tarefa.value = '';
+				tarefa.focus();
+			}
+
+		})()
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Problema com Média</title>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+	<h1>Problema com Média</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Nota 1</th>
+				<th>Nota 2</th>
+				<th>Nota 3</th>
+				<th>Nota 4</th>
+				<th>Média</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>Paulo</td>
+				<td>4.0</td>
+				<td>5.0</td>
+				<td>7.0</td>
+				<td>7.0</td>
+			</tr>
+
+			<tr>
+				<td>João</td>
+				<td>4.0</td>
+				<td>5.0</td>
+				<td>7.0</td>
+				<td>7.0</td>
+			</tr>
+
+			<tr>
+				<td>Maria</td>
+				<td>4.0</td>
+				<td>8.0</td>
+				<td>2.0</td>
+				<td>7.0</td>
+			</tr>
+
+			<tr>
+				<td>Juliana</td>
+				<td>4.0</td>
+				<td>5.0</td>
+				<td>7.0</td>
+				<td>7.0</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script>
+		(function init(){
+			
+			function calculaMedia(){
+				var resultado = 0;
+				var media = 0;
+				var i = 0;
+				while(typeof arguments[i] === 'number'){
+                    resultado += arguments[i];
+                    i++
+                }  
+				var media = resultado/arguments.length;
+				return media;
+			}
+			
+			var media1 = calculaMedia(5,5,0,5);
+			console.log(media1);
+		
+		})();
+	</script>
+</body>
+</html>

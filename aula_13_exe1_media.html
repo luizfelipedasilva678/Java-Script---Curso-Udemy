@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício com Média</title>
+    <script src="beluga.js"></script>
+</head>
+<body>
+    
+    <script>
+        (function(){
+            window.addEventListener('load', function(){    
+                var notasAluno1 = [10.4,5.0,10.0,6.0];
+                var notasAluno2 = [10.4,5.0,0,6.0];
+
+                for (let i=0;i<notasAluno2.length;i++) 
+                {
+                    if(notasAluno2[i] === 0){
+                        console.log('Aluno Reprovado')
+                    }
+                    var media = calcularMedia.apply(this, notasAluno1);
+                    console.log('Média:', media);
+                }
+            })
+        })();
+    </script> 
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício com AJAX</title>
+</head>
+<body>
+	<dl id="dl-users">
+	</dl>
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', "https://jsonplaceholder.typicode.com/users");
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+					var dl = document.querySelector('#dl-users');
+					var resposta = JSON.parse(xhr.responseText);
+					var dls = null;
+					resposta.forEach(function(item){
+						dls = "<dt>"+item.id+"</dt>"+"<dd>"+item.name+"</dd>";
+						dl.innerHTML += dls;
+					})
+				}
+			}
+		}
+	</script>
+</body>
+</html>

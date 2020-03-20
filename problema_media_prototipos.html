@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Problema com Médias Protótipos </title>
+    <script src='beluga.js'></script>
+</head>
+
+<body>
+    <script>
+        Array.prototype.getMedia = function(){
+            var soma = 0;
+            this.forEach(function(item){
+                soma += item;
+            })
+            console.log(soma/this.length);
+        }
+        
+        
+    </script>
+</body>
+
+</html>

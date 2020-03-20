@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Problema com Check Box</title>
+</head>
+<body>
+	<form action="#">
+		Digite seu nome: <input type="text" id="nome" name="nome">
+		<br>
+		Digite sua senha: <input type="password" id="senha" name="senha">
+		<br>
+		<input type="checkbox" id="termos" name="termos">Aceito os termos de uso
+		<br>
+		<input type="submit" id ="enviar" name="enviar" value="Enviar">
+	</form>
+
+	<script type="text/javascript">
+		(function(){
+			var form = document.querySelector('form');
+
+			form.termos.addEventListener('change', function(e){
+				if (form.termos.checked){
+					form.enviar.disabled = false;
+				}else{
+					form.enviar.disabled = true;
+				}
+			})	
+
+			form.enviar.addEventListener('click', function(e){
+				if(form.nome.value === '' || form.senha.value === ''){
+					alert('Existem campos vazios');
+					e.preventDefault();
+				}
+			})
+
+		})();			
+	</script>
+</body>
+</html>

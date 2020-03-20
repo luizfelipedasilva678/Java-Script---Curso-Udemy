@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <script>
+        function Ponte(){
+            this.largura = 100;
+            this.altura = 10;
+            this.setAltura = function(altura){
+                this.altura = altura;
+            }
+        }
+        
+        Ponte.prototype.getAltura = function(){
+            return this.altura;
+        }
+        
+        var ponte2 = new Ponte();
+        
+        function PonteFudida(){
+            Ponte.call(this);
+            this.nome = 'Ponte Linda';
+        }
+        
+        var ponte = new PonteFudida();
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Aniversário</title>
+</head>
+
+<body>
+    <script>
+        (function(){
+            var meuAniversario = new Date(2020, 01, 05);
+            var dataAtual = new Date();
+            if (meuAniversario.getDate() === dataAtual.getDate() && meuAniversario.getMonth()   === dataAtual.getMonth && meuAniversario.getFullYear() === dataAtual.getFullYear()) {
+                console.log('Feliz Aniversário');
+            }
+        })();
+    </script>
+</body>
+
+</html>

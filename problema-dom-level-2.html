@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Problema com DOM level 2</title>
+</head>
+<body>
+	<form action="#" method="POST">
+		<label>Usuário</label>
+		<input id ="usuario" type="text" name="usuario">
+		
+		<br>
+		<br>
+
+		Senha:<input id="senha" type="password" name="senha">
+		
+		<br>
+		<br>
+
+		<input id="enviar" type="submit" name="enviar">	
+	</form>
+
+	<script>
+		(function(){
+			'use strict';
+			var $form = document.querySelector('form');
+			
+			$form.enviar.addEventListener('click', function(e){
+				if($form.usuario.value === '' || $form.senha.value === ''){
+					alert('Existem campos vazios');
+					e.preventDefault();
+				}
+			})
+		})();
+	</script>
+</body>
+</html>

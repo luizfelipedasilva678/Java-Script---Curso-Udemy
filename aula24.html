@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="beluga2.js"></script>
+        
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+
+        <div class="container">
+            
+        
+        <form>
+          <div class="form-group">
+            <label class="control-label" for="inputCEP">CEP</label>
+            <div class="controls">
+              <input class="form-control" type="text" id="inputCEP" placeholder="xxxxx-xxx">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="inputLogradouro">Logradouro</label>
+            <div class="controls">
+              <input class="form-control" type="text" id="inputLogradouro" placeholder="Logradouro">
+              <input class="form-control" type="number" id="inputNumero" placeholder="Numero">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label" for="inputBairro">Bairro</label>
+            <div class="controls">
+              <input class="form-control" type="text" id="inputBairro" placeholder="Bairro">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="inputCidade">Cidade</label>
+            <div class="controls">
+              <input class="form-control" type="text" id="inputCidade" placeholder="Cidade">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label" for="inputEstado">Estado</label>
+            <div class="controls">
+              <input class="form-control" type="text" id="inputEstado" placeholder="Estado">
+            </div>
+          </div>
+
+        </form>
+        </div>
+    </body>
+    
+    <script>
+        async function CepAjax(CodigoDeEndereçamentoPostal){
+            var url = "https://viacep.com.br/ws/"+CodigoDeEndereçamentoPostal+"/json/";
+            var promise = await fetch(url);
+            
+            if(!promise.ok){
+                throw new Error('FALHOU --- ')
+            }
+
+            let cep = await promise.json(); 
+            return cep;
+        }  
+
+        document.querySelector('form').addEventListener('keypress',function(e){
+            if(e.keyCode === 13){   
+                var cep = document.querySelector('#inputCEP').value.split('-')
+                cep = cep.join('');
+                if(cep.length === 8){
+                    CepAjax(cep)
+                        .then( resposta =>{
+                            document.querySelector('#inputLogradouro').value = resposta.logradouro;
+                            document.querySelector('#inputCidade').value = resposta.localidade;
+                            document.querySelector('#inputEstado').value = resposta.uf;
+                            document.querySelector('#inputBairro').value = resposta.bairro;
+                            document.querySelector('#inputNumero').focus();
+                        })
+                         .catch( err => {
+                            console.log('---erro')
+                            console.log(err.message);
+                        })   
+                }else{
+                    console.log('O cep está errado');
+                }
+            }
+        })
+
+    </script>
+</html>
